@@ -1,4 +1,6 @@
+using AllianzInsure.Infrastructure;
 using AllianzInsure.Server.Extensions;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwagger();
+
+builder.Services.AddDbContext<ApplicationContext>(context => context.UseMySQL(builder.Configuration.GetConnectionString("MySqlConnection")));
 
 var app = builder.Build();
 

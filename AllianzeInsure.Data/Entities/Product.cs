@@ -1,6 +1,6 @@
 ﻿namespace AllianzeInsure.Data.Entities
 {
-    public class Products : Base
+    public class Product : Base
     {
         public string? BodyTpe {  get; set; }
         public decimal Premium { get; set; }

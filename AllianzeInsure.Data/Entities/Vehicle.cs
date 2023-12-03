@@ -1,6 +1,6 @@
 ﻿namespace AllianzeInsure.Data.Entities
 {
-    public  class Vehicles : Base
+    public  class Vehicle : Base
     {
         public string? Make {  get; set; }
         public string? Model { get; set; }
