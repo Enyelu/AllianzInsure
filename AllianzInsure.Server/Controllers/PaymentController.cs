@@ -4,9 +4,7 @@ using AllianzeInsure.Core.DTO;
 using AllianzeInsure.Core.Queries;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using PayStack.Net;
-using System.Configuration;
 using System.Net;
 
 namespace AllianzInsure.Server.Controllers
@@ -25,27 +23,27 @@ namespace AllianzInsure.Server.Controllers
             _mapper = mapper;
         }
 
-        [HttpPost("Payment")]
+        [HttpPost]
         [ProducesResponseType(typeof(GenericResponse<string>), (int)HttpStatusCode.OK)]
-        public IActionResult Payment(MakePayment.Command command)
+        public async Task<IActionResult> Payment(MakePayment.Command command)
         {
-            var response = Mediator.Send(command);
+            var response = await Mediator.Send(command);
             return Ok(response);
         }
 
-        [HttpGet("PaymentHistory")]
+        [HttpGet("History")]
         [ProducesResponseType(typeof(GenericResponse<List<PaymentResponse>>), (int)HttpStatusCode.OK)]
-        public IActionResult FetchPaymentHistory([FromQuery] string id)
+        public async Task<IActionResult> FetchPaymentHistory([FromQuery] string? id)
         {
-            var response = Mediator.Send(new FetchPayments.Query { Id = id});
+            var response = await Mediator.Send(new FetchPayments.Query { Id = id});
             return Ok(response);
         }
 
         [HttpGet("Verify")]
         [ProducesResponseType(typeof(string), (int)HttpStatusCode.OK)]
-        public IActionResult Verify(string reference)
+        public async Task<IActionResult> Verify(string reference)
         {
-            var response = Mediator.Send(new VerifyPayment.Command { Reference = reference });
+            var response = await Mediator.Send(new VerifyPayment.Command { Reference = reference });
             return Ok(response);
         }
     }

@@ -29,6 +29,8 @@ namespace AllianzeInsure.Core.Commands
                     Make = request.Make,
                     Model = request.Model,
                     Year = request.Year,
+                    CreatedBy = "Test User",
+                    ModifiedBy = "Test User"
                 };
              
                 await _context.Vehicles.AddAsync(vehicle, cancellationToken);
