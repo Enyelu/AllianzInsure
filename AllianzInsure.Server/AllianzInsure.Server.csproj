@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AllianzeInsure.Core\AllianzeInsure.Core.csproj" />
     <ProjectReference Include="..\allianzinsure.client\allianzinsure.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>

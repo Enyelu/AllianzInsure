@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AllianzInsure.Server.Controllers
 {
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("[controller]")]
     public class BaseController : ControllerBase
     {
         private IMediator _mediator;

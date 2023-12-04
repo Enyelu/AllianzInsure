@@ -8,6 +8,7 @@ namespace AllianzInsure.Infrastructure
         public DbSet<Insurance> Insurances { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Vehicle> Vehicles { get; set; }
+        public DbSet<Payment> Payments { get; set; }
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options) { }
     }
 }
