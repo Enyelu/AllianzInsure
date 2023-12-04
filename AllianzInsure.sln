@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllianzInsure.Server", "All
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "allianzinsure.client", "allianzinsure.client\allianzinsure.client.esproj", "{06B7293F-2CC8-45DC-80DA-4F5791979CB4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllianzeInsure.Core", "AllianzeInsure.Core\AllianzeInsure.Core.csproj", "{7A81C926-F37A-4D47-B40A-7D178319DB12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllianzeInsure.Data", "AllianzeInsure.Data\AllianzeInsure.Data.csproj", "{4A5DD1AF-C31B-452C-A52C-FAA5A53B85B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllianzInsure.Infrastructure", "AllianzInsure.Infrastructure\AllianzInsure.Infrastructure.csproj", "{79533805-15DF-4C73-B555-85007FC699ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +29,18 @@ Global
 		{06B7293F-2CC8-45DC-80DA-4F5791979CB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06B7293F-2CC8-45DC-80DA-4F5791979CB4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{06B7293F-2CC8-45DC-80DA-4F5791979CB4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7A81C926-F37A-4D47-B40A-7D178319DB12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A81C926-F37A-4D47-B40A-7D178319DB12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A81C926-F37A-4D47-B40A-7D178319DB12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A81C926-F37A-4D47-B40A-7D178319DB12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A5DD1AF-C31B-452C-A52C-FAA5A53B85B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A5DD1AF-C31B-452C-A52C-FAA5A53B85B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A5DD1AF-C31B-452C-A52C-FAA5A53B85B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A5DD1AF-C31B-452C-A52C-FAA5A53B85B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79533805-15DF-4C73-B555-85007FC699ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79533805-15DF-4C73-B555-85007FC699ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79533805-15DF-4C73-B555-85007FC699ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79533805-15DF-4C73-B555-85007FC699ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -10,15 +10,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AllianzeInsure.Core\AllianzeInsure.Core.csproj" />
     <ProjectReference Include="..\allianzinsure.client\allianzinsure.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="..\AllianzInsure.Infrastructure\AllianzInsure.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.SpaProxy">
       <Version>6.*-*</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.OpenApi" Version="1.6.11" />
+    <PackageReference Include="MySql.EntityFrameworkCore" Version="6.0.21" />
+    <PackageReference Include="Serilog" Version="3.1.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
   </ItemGroup>
 
 </Project>
