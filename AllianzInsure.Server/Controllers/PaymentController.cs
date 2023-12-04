@@ -25,7 +25,7 @@ namespace AllianzInsure.Server.Controllers
         }
 
         [HttpGet("PaymentHistory")]
-        [ProducesResponseType(typeof(GenericResponse<PaymentResponse>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(GenericResponse<List<PaymentResponse>>), (int)HttpStatusCode.OK)]
         public IActionResult FetchPaymentHistory([FromQuery] string id)
         {
             var response = Mediator.Send(new FetchPayments.Query { Id = id});

@@ -1,5 +1,8 @@
 ﻿using AllianzeInsure.Core.Common;
+using AllianzeInsure.Data.Entities;
+using AllianzInsure.Infrastructure;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace AllianzeInsure.Core.Commands
 {
@@ -14,13 +17,24 @@ namespace AllianzeInsure.Core.Commands
 
         public class CreateProductHandler : IRequestHandler<Command, GenericResponse<string>>
         {
-            public CreateProductHandler()
+            private readonly ApplicationContext _context;
+            public CreateProductHandler(ApplicationContext context)
             {
-
+                _context = context;
             }
-            public Task<GenericResponse<string>> Handle(Command request, CancellationToken cancellationToken)
+            public async Task<GenericResponse<string>> Handle(Command request, CancellationToken cancellationToken)
             {
-                throw new NotImplementedException();
+                var payment = new Product
+                {
+                    BodyTpe = request.BodyTpe,
+                    Premium = request.Premium,
+                    Discount = request.Discount
+                };
+
+                await _context.Products.AddAsync(payment, cancellationToken);
+                await _context.SaveChangesAsync(cancellationToken);
+
+                return GenericResponse<string>.Success("Success", "Product was created successfully");
             }
         }
     }

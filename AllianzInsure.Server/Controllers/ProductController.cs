@@ -26,7 +26,7 @@ namespace AllianzInsure.Server.Controllers
         }
 
         [HttpGet("FetchProduct")]
-        [ProducesResponseType(typeof(GenericResponse<ProductResponse>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(GenericResponse<List<ProductResponse>>), (int)HttpStatusCode.OK)]
         public IActionResult FetchProduct([FromQuery] string id)
         {
             var response = Mediator.Send(new FetchProducts.Query { Id = id});

@@ -35,7 +35,7 @@ namespace AllianzeInsure.Core.Queries
             public FetchInsuranceHandler(ApplicationContext context, IMapper mapper)
             {
                 _context = context;
-                _context = context;
+                _mapper = mapper;
             }
             public async Task<GenericResponse<List<Result>>> Handle(Query request, CancellationToken cancellationToken)
             {

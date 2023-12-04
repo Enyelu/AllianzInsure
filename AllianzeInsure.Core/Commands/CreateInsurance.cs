@@ -45,8 +45,8 @@ namespace AllianzeInsure.Core.Commands
                 };
 
 
-                await _context.AddAsync(insurance);
-                await _context.SaveChangesAsync();
+                await _context.Insurances.AddAsync(insurance, cancellationToken);
+                await _context.SaveChangesAsync(cancellationToken);
 
                 return GenericResponse<string>.Success("Success", "Policy was created successfully");
             }
