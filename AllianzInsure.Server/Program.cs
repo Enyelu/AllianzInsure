@@ -1,6 +1,10 @@
 using AllianzeInsure.Core;
+using AllianzInsure.Infrastructure;
 using AllianzInsure.Server.Extensions;
 using AllianzInsure.Server.Middlewares;
+using Microsoft.EntityFrameworkCore;
+using MySql.Data.MySqlClient;
+using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,8 +17,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwagger();
 
-//builder.Services.AddDbContext<ApplicationContext>(context => context.UseMySQL(builder.Configuration.GetConnectionString("MySqlConnection")));
+//builder.Services.AddDbContext<ApplicationContext>(context => context.UseMySQL(builder.Configuration["ConnectionString:MySqlConnection"]));
 
+builder.Services.AddDbContext<ApplicationContext>(context => context.UseMySQL(builder.Configuration["ConnectionString:MySqlConnection"]));
 var app = builder.Build();
 app.UseCors();
 app.ConfigureExceptionHandler();

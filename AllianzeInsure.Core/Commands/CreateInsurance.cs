@@ -1,5 +1,9 @@
 ﻿using AllianzeInsure.Core.Common;
+using AllianzeInsure.Data.Entities;
+using AllianzInsure.Infrastructure;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AllianzeInsure.Core.Commands
 {
@@ -20,13 +24,31 @@ namespace AllianzeInsure.Core.Commands
 
         public class CreateInsuranceHandler : IRequestHandler<Command, GenericResponse<string>>
         {
-            public CreateInsuranceHandler()
+            private readonly ApplicationContext _context;
+            public CreateInsuranceHandler(ApplicationContext context)
             {
-                    
+                _context = context;
             }
-            public Task<GenericResponse<string>> Handle(Command request, CancellationToken cancellationToken)
+            public async Task<GenericResponse<string>> Handle(Command request, CancellationToken cancellationToken)
             {
-                throw new NotImplementedException();
+                var insurance = new Insurance
+                {
+                    FirstName = request.FirstName,
+                    LastName = request.LastName,
+                    DateOfBirth = request.DateOfBirth,
+                    Email = request.Email,
+                    PhoneNumber = request.PhoneNumber,
+                    VehicleMake = request.VehicleMake,
+                    VehicleModel = request.VehicleModel,
+                    RegistrationNumber = request.RegistrationNumber,
+                    BodyType = request.BodyType,
+                };
+
+
+                await _context.AddAsync(insurance);
+                await _context.SaveChangesAsync();
+
+                return GenericResponse<string>.Success("Success", "Policy was created successfully");
             }
         }
     }

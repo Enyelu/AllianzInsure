@@ -29,7 +29,7 @@ namespace AllianzInsure.Server.Controllers
 
         [HttpGet("FetchInsurance")]
         [ProducesResponseType(typeof(GenericResponse<FetchInsurance.Result>), (int)HttpStatusCode.OK)]
-        public IActionResult FetchInsurance([FromQuery]string id)
+        public IActionResult FetchInsurance([FromQuery]string? id)
         {
             var response = Mediator.Send(new FetchInsurance.Query { Id = id});
             return Ok(response);
