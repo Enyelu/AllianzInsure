@@ -1,5 +1,6 @@
 using AllianzeInsure.Core;
 using AllianzInsure.Server.Extensions;
+using AllianzInsure.Server.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,7 @@ builder.Services.AddSwagger();
 
 var app = builder.Build();
 app.UseCors();
+app.ConfigureExceptionHandler();
 app.UseSwagger();
 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AllianzInsureApi v1"));
 
