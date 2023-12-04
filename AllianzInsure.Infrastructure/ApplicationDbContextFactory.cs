@@ -16,7 +16,7 @@ namespace AllianzInsure.Infrastructure
 
             var connectionString = "";
 
-            optionsBuilder.UseMySQL("server=localhost;user=root;database=AllianzDb;port=3306;password=mypassword;");
+            optionsBuilder.UseMySQL("server=localhost;user=root;database=AllianzDb;port=3306;password=Thank.you12345;");
 
             return new ApplicationContext(optionsBuilder.Options);
         }

@@ -1,6 +1,6 @@
 ﻿namespace AllianzeInsure.Data.Entities
 {
-    public class Insurance
+    public class Insurance : Base
     {
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
