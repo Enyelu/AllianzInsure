@@ -18,20 +18,20 @@ namespace AllianzInsure.Server.Controllers
             _mapper = mapper;
         }
 
-        [HttpPost("Insurance")]
+        [HttpPost]
         [ProducesResponseType(typeof(GenericResponse<string>), (int)HttpStatusCode.OK)]
-        public IActionResult Insurance(CreateInsuranceDto command)
+        public async Task<IActionResult> Insurance(CreateInsuranceDto command)
         {
             var mappedRequest = _mapper.Map<CreateInsurance.Command>(command);
-            var response = Mediator.Send(mappedRequest);
+            var response = await Mediator.Send(mappedRequest);
             return Ok(response);
         }
 
-        [HttpGet("FetchInsurance")]
+        [HttpGet]
         [ProducesResponseType(typeof(GenericResponse<List<FetchInsurance.Result>>), (int)HttpStatusCode.OK)]
-        public IActionResult FetchInsurance([FromQuery]string? id)
+        public async Task<IActionResult> FetchInsurance([FromQuery]string? id)
         {
-            var response = Mediator.Send(new FetchInsurance.Query { Id = id});
+            var response = await Mediator.Send(new FetchInsurance.Query { Id = id});
             return Ok(response);
         }
     }

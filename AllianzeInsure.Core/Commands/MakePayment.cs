@@ -15,7 +15,6 @@ namespace AllianzeInsure.Core.Commands
     {
         public class Command : IRequest<GenericResponse<string>>
         {
-            public string Id { get; set; }
             public string InsuranceId { get; set; }
             public string CustomerFirstName { get; set; }
             public string CustomerLastName { get; set; }
@@ -63,7 +62,9 @@ namespace AllianzeInsure.Core.Commands
                         CustomerEmail = request.CustomerEmail,
                         PaymentType = request.PaymentType,
                         Amount = request.Amount,
-                        TransactionReference = transactionRef
+                        TransactionReference = transactionRef,
+                        CreatedBy = "Test User",
+                        ModifiedBy = "Test User"
                     };
 
                 
