@@ -37,7 +37,7 @@ namespace AllianzeInsure.Core.Queries
                     return GenericResponse<List<ProductResponse>>.Success(_mapper.Map<List<ProductResponse>>(product), "Successful");
                 }
 
-                var prdt = await _context.Insurances.ToListAsync();
+                var prdt = await _context.Products.ToListAsync();
                 if (prdt.Count <= 0)
                 {
                     return GenericResponse<List<ProductResponse>>.NotFound($"No Product found");

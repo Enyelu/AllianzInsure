@@ -2,8 +2,6 @@
 using AllianzeInsure.Data.Entities;
 using AllianzInsure.Infrastructure;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace AllianzeInsure.Core.Commands
 {
@@ -42,6 +40,8 @@ namespace AllianzeInsure.Core.Commands
                     VehicleModel = request.VehicleModel,
                     RegistrationNumber = request.RegistrationNumber,
                     BodyType = request.BodyType,
+                    CreatedBy = "Test User",
+                    ModifiedBy = "Test User"
                 };
 
 

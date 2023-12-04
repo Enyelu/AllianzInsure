@@ -28,7 +28,9 @@ namespace AllianzeInsure.Core.Commands
                 {
                     BodyTpe = request.BodyTpe,
                     Premium = request.Premium,
-                    Discount = request.Discount
+                    Discount = request.Discount,
+                    CreatedBy = "Test User",
+                    ModifiedBy = "Test User"
                 };
 
                 await _context.Products.AddAsync(payment, cancellationToken);
